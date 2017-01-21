@@ -21,11 +21,13 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 ```gradle
     dependencies {
-    	        compile 'com.github.interwap:camera-fp05:v1.1'
+    	        compile 'com.github.interwap:camera-fp05:v1.0'
     	}
  ```
 
-Get more information about versions and releases here: [`jitpack`](https://jitpack.io/#interwap/camera-fp05/v1.1)
+Get more information about versions and releases here: [`jitpack`](https://jitpack.io/#interwap/camera-fp05/v1.0)
+
+
 
 Using the Camera Module:
 
@@ -51,9 +53,10 @@ Step 2. Call Camera Intent
 
 
      //Please note the default storage location for CameraFP05 is the external storage.
-     //Providing a storage location means that you have already created a folder or folders in your sd card else it will save to the root folder of the sd card as default
-     //Storage location should must not start with a file seperator (/)
-     //Example: intent.putExtra("storage", "newimages") or intent.putExtra("storage", "newimages/today");
+     //Providing a storage location means that you have already created a folder or folders in your sd card
+     else it will save to the root folder of the sd card as default
+     //Storage location must not start with a file separator (/)
+     //Usage Example: intent.putExtra("storage", "newimages") or intent.putExtra("storage", "newimages/today");
 
      IMAGE QUALITY (int):
 
@@ -62,7 +65,8 @@ Step 2. Call Camera Intent
      //Please note that the default image quality is 70 and parameter expects integer
      //For the best image quality, set quality to 100.
 
-     Caveat: The higher the quality, the higher the actual size of photo on device. Although image produced have been optimized.
+     Caveat: The higher the quality, the higher the actual size of photo on device.
+     Although image produced have been optimized.
 
   ```
 
@@ -78,7 +82,8 @@ Step 2. Call Camera Intent
   ```gradle
 
      After capture, CameraFP05 returns to the previous activity it was launched from. Optionally,
-     absolute path of image captured is sent along (as a String: "imageURI" and can be retrieved by calling the override method:
+     absolute path of image captured is sent along (as a String: "imageURI")
+      and can be retrieved by calling the override method:
 
      @Override
          protected void onActivityResult(int requestCode, int resultCode, Intent data) {
